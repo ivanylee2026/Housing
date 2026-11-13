@@ -39,12 +39,12 @@
             top: 0;
             left: 0;
             width: 1250px;
-            height: 2125px
+            height: 2400px
         }
 
         .wrap {
             width: 1250px;
-            height: 2125px;
+            height: 2400px;
             padding: 14px 14px 10px;
             background: var(--bg);
             display: flex;
@@ -334,6 +334,14 @@
             border-bottom: 1px solid #ddd
         }
 
+        .eco th + th {
+            border-left: 1px solid rgba(255, 255, 255, .6)
+        }
+
+        .eco td + td {
+            border-left: 1px solid #ddd
+        }
+
         .eco td.i {
             padding-left: 14px;
             font-style: italic
@@ -341,6 +349,15 @@
 
         .eco th {
             font-size: 10.5px
+        }
+
+        .eco-note {
+            background: #f3ead8;
+            border-radius: 4px;
+            padding: 4px 6px;
+            font-size: 9.5px;
+            font-style: italic;
+            margin-top: 4px
         }
 
         .box {
@@ -862,10 +879,11 @@
                             <td>N/A</td>
                         </tr>
                     </table>
+                    <div class="eco-note">Note for project economics</div>
                 </div>
             </div>
             <div class="card">
-                <div class="hd "><em>7</em>Key Project Inputs</div>
+                <div class="hd "><em>7</em>key Project Economic Inputs</div>
                 <table class="">
                     <tr>
                         <th>PRODUCT</th>
@@ -973,6 +991,9 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="card">
+                <div class="hd">Appendix</div>
             </div>
         </div>
         </div>
