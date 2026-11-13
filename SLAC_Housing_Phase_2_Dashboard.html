@@ -33,8 +33,8 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: #555;
-            font-size: 11px;
-            line-height: 1.3
+            font-size: 12px;
+            line-height: 1.35
         }
 
         #stage {
@@ -97,7 +97,7 @@
 
         .kpis {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(7, 1fr);
             gap: 8px
         }
 
@@ -165,7 +165,16 @@
             padding: 10px;
             overflow: hidden;
             border-radius: 6px;
-            background: var(--card)
+            background: #fff
+        }
+
+        .profile,
+        .amenities,
+        .rent-card,
+        .eco-card,
+        .bottom-left,
+        .bottom-right {
+            background: #fff
         }
 
         .hd {
@@ -219,7 +228,7 @@
         .item b {
             display: block;
             color: var(--navy);
-            font-size: 11.5px
+            font-size: 12.5px
         }
 
         .ph {
@@ -308,7 +317,7 @@
         }
 
         .profile {
-            flex: 1.65;
+            flex: 1;
             display: flex;
             flex-direction: column
         }
@@ -327,24 +336,33 @@
         }
 
         .profile-block {
-            min-width: 0
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%
         }
 
         .profile-block h3 {
-            font-size: 11.5px
+            font-size: 13px
         }
 
         .profile-panels {
             display: flex;
-            gap: 6px
+            gap: 6px;
+            flex: 1;
+            min-height: 0;
+            height: 100%
         }
 
         .profile-panel {
             flex: 1;
+            display: flex;
+            flex-direction: column;
             padding: 7px;
             border-radius: 4px;
             background: var(--blue);
-            font-size: 9.5px
+            font-size: 9.5px;
+            min-height: 0
         }
 
         .profile-panel.purple {
@@ -355,11 +373,12 @@
             display: block;
             margin-bottom: 4px;
             color: var(--navy);
-            font-size: 11px
+            font-size: 12px
         }
 
         .profile-panel p {
-            margin-top: 4px
+            margin-top: 4px;
+            font-size: 12px
         }
 
         .profile-detail {
@@ -410,7 +429,7 @@
         .amenity-group h3 {
             margin: 0 0 5px;
             color: var(--navy);
-            font-size: 11.5px
+            font-size: 14px
         }
 
         .amenity-group li {
@@ -419,7 +438,7 @@
             gap: 7px;
             margin-bottom: 5px;
             padding-left: 0;
-            font-size: 9.5px
+            font-size: 12px
         }
 
         .amenity-group li:before {
@@ -622,9 +641,10 @@
             <div class="kpis">
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/01_KPI_Sand_Hill_Prestige_Star.png" alt=""><div><b>25%</b><span>Sand Hill Road Premium</span></div></div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/02_KPI_Total_Units_Building.png" alt=""><div><b>630</b><span>Total Units</span></div></div>
-                <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/03_KPI_Program_Mix_Pie_Chart.png" alt=""><div><b>66.7% / 33.3%</b><span>Standard Luxury / <br/> Ultra-Luxury</span></div></div>
+                <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/03_KPI_Program_Mix_Pie_Chart.png" alt=""><div><b>66.7%/33.3%</b><span>Standard Luxury / <br/> Ultra-Luxury</span></div></div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/04_KPI_Average_Unit_Size_Ruler.png" alt=""><div><b>1,210 SF</b><span>Avg. Unit Size</span></div></div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/05_KPI_Average_Rent_Dollar_Coin.png" alt=""><div><b>$10,495</b><span>Avg. Asking Rent</span></div></div>
+                <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt=""><div><b>$8.67</b><span>Avg. $/SF</span></div></div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt=""><div><b>$8.67</b><span>Avg. $/SF</span></div></div>
             </div>
 
@@ -691,16 +711,12 @@
                 </section>
 
                 <div class="row">
-                    <section class="card profile">
-                        <div class="hd"><em>3</em>Positioning &amp; Renter Profile</div>
-                        <div class="profile-columns">
-                            <div class="profile-block">
-                                <h3>Typology / Positioning</h3>
-                                <div class="positioning-copy"><img src="SLAC_Dashboard_Individual_Icons/13_Positioning_Low_Rise_Building.png" alt=""><span>Recommend a mixed Standard Luxury and Ultra-Luxury low-rise development to emphasize exclusivity and fit into the surroundings.</span></div>
-                            </div>
-                            <div class="profile-block">
-                                <h3>Renter Profile</h3>
-                                <div class="profile-panels">
+                    <section class="card profile" style="flex:1">
+                        <div class="hd"><em>3</em>Renter Profile</div>
+                        <div class="profile-columns" style="grid-template-columns: 1fr; height: 100%;">
+                            <div class="profile-block" style="height:100%;">
+                                
+                                <div class="profile-panels" style="height:100%;">
                                     <div class="profile-panel">
                                         <b>Standard Luxury</b>
                                         <div class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><p>Young professionals, established professionals.</p></div>
@@ -715,14 +731,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="profile-block">
+                        </div>
+                    </section>
+                    <section class="card profile" style="flex:1">
+                        <div class="hd"><em>4</em>Typology / Positioning &amp; Rationale</div>
+                        <div class="profile-columns" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div class="profile-block" style="background: var(--blue); border-radius: 6px; padding: 10px; min-height: 180px;">
+                                <h3>Typology / Positioning</h3>
+                                <div class="positioning-copy"><img src="SLAC_Dashboard_Individual_Icons/13_Positioning_Low_Rise_Building.png" alt=""><span>Recommend a mixed Standard Luxury and Ultra-Luxury low-rise development to emphasize exclusivity and fit into the surroundings.</span></div>
+                            </div>
+                            <div class="profile-block" style="background: var(--purple); border-radius: 6px; padding: 10px; min-height: 180px;">
                                 <h3>Positioning Rationale</h3>
                                 <div class="positioning-copy"><img src="SLAC_Dashboard_Individual_Icons/20_Positioning_Rationale_Target.png" alt=""><span>Target rents reflect roughly a 25% site premium due to SLAC's prestige on Sand Hill Road. Standard Luxury will serve as market entry with smaller unit types, while Ultra-Luxury units are at a larger scale with elevated finishes and amenities.</span></div>
                             </div>
                         </div>
                     </section>
-                    <section class="card amenities">
-                        <div class="hd"><em>4</em>Amenities</div>
+                    <section class="card amenities" style="flex:1">
+                        <div class="hd"><em>5</em>Amenities</div>
                         <div class="amenity-columns">
                             <div class="amenity-group">
                                 <h3>Standard Luxury</h3>
@@ -739,7 +764,7 @@
                 <div class="analysis-layout">
                     <div class="analysis-column">
                     <section class="card rent-card">
-                        <div class="hd"><em>5</em>Rents &amp; Program Mix</div>
+                        <div class="hd"><em>6</em>Rents &amp; Program Mix</div>
                         <table>
                             <tr><th>Unit Type</th><th>Units</th><th>Mix</th><th>Avg. Unit Size (SF)</th><th>Asking Rent</th><th>Avg. $/SF</th></tr>
                             <tr class="blue"><td>Standard Luxury</td><td>420</td><td>66.7%</td><td>1,195</td><td>$8,439</td><td>$7.06</td></tr>
@@ -762,7 +787,7 @@
                         </table>
                     </section>
                     <section class="card bottom-left">
-                        <div class="hd"><em>7</em><img class="hd-icon" src="SLAC_Dashboard_Individual_Icons/31_Key_Lessons_Lightbulb.png" alt="">Case Studies / Lessons Learned</div>
+                        <div class="hd"><em>8</em><img class="hd-icon" src="SLAC_Dashboard_Individual_Icons/31_Key_Lessons_Lightbulb.png" alt="">Case Studies / Lessons Learned</div>
                         <div class="case-studies">
                             <div class="case">
                                 <div class="ph" style="width:180px;height:130px;flex:none" >[ Image placeholder ]</div>
@@ -778,7 +803,7 @@
                     </div>
                     <div class="analysis-column">
                     <section class="card eco-card">
-                        <div class="hd"><em>6</em>Residential Project Economics</div>
+                        <div class="hd"><em>7</em>Residential Project Economics</div>
                         <table class="eco">
                             <tr><th></th><th>Standard Luxury<br>(420 units)</th><th>Ultra-Luxury<br>(210 units)</th></tr>
                             <tr><td>NOI</td><td>$24,660,000</td><td>$18,630,000</td></tr>
@@ -797,7 +822,7 @@
                         <div class="eco-note">Note for project economics</div>
                     </section>
                     <section class="card bottom-right">
-                        <div class="hd"><em>8</em>key Project Economic Inputs</div>
+                        <div class="hd"><em>9</em>key Project Economic Inputs</div>
                         <table class="inputs">
                             <tr><th>Product Type</th><th>Avg. Unit Size</th><th>Eff.</th><th>Units / Acre</th><th>Avg. Rent</th><th>Other Income</th><th>Occupancy</th><th>OpEx</th><th>Cap Rate</th><th>Hard Costs</th><th>Soft Costs</th><th>Financing</th><th>Parking Cost / Space</th><th>Parking Spaces</th></tr>
                             <tr class="blue"><td>SLAC - Low Rise Standard Luxury</td><td>1,195</td><td>85%</td><td>30</td><td>$6.47</td><td>3%</td><td>95%</td><td>35%</td><td>4.50%</td><td>$265 / gsf</td><td>20%</td><td>5%</td><td>$10,000</td><td>1.75</td></tr>
