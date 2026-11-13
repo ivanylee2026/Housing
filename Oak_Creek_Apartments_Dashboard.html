@@ -39,12 +39,12 @@
             top: 0;
             left: 0;
             width: 1250px;
-            height: 1750px
+            height: 1810px
         }
 
         .wrap {
             width: 1250px;
-            height: 1750px;
+            height: 1810px;
             padding: 14px 14px 10px;
             background: var(--bg);
             display: flex;
@@ -327,13 +327,90 @@
             border-bottom: 1px solid #ddd
         }
 
+        .eco th + th {
+            border-left: 1px solid rgba(255, 255, 255, .6)
+        }
+
+        .eco td + td {
+            border-left: 1px solid #ddd
+        }
+
         .eco td.i {
             padding-left: 14px;
             font-style: italic
         }
 
+        .eco {
+            table-layout: fixed
+        }
+
         .eco th {
             font-size: 10.5px
+        }
+
+        .eco-note {
+            background: #f3ead8;
+            border-radius: 4px;
+            padding: 4px 6px;
+            font-size: 9.5px;
+            font-style: italic;
+            margin-top: 4px
+        }
+
+        .eco .eco-group th {
+            border: 1px solid #fff
+        }
+
+        .eco .eco-group .heavier-group {
+            border-left: 2px solid #fff
+        }
+
+        .eco .eco-subhead th {
+            border: 1px solid #ddd
+        }
+
+        .eco th:first-child,
+        .eco td:first-child {
+            border-right: 1px solid #ddd
+        }
+
+        .eco th:nth-child(3),
+        .eco td:nth-child(3) {
+            border-left: 2px solid #fff
+        }
+
+        .program-summary {
+            table-layout: fixed
+        }
+
+        .program-summary .touch-cell {
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 700;
+            border-right: 2px solid #fff
+        }
+
+        .program-summary .program-name {
+            text-align: left;
+            border-right: 2px solid #fff
+        }
+
+        .program-summary .heavier-touch {
+            background: #fbe9b4;
+            color: #14213d
+        }
+
+        .program-summary .heavier-start td {
+            border-top: 2px solid #fff
+        }
+
+        .program-summary .summary-heading {
+            background: linear-gradient(to right, #4a5568 0%, #4a5568 calc(42.857% - 1px), #fff calc(42.857% - 1px), #fff calc(42.857% + 1px), #4a5568 calc(42.857% + 1px));
+            border-right: 2px solid #fff
+        }
+
+        .eco .eco-subhead th:nth-child(2) {
+            border-left: 2px solid #fff
         }
 
         .box {
@@ -622,9 +699,18 @@
                 <div class="row">
                     <div class="card" style="flex:1.25">
                         <div class="hd "><em>5</em>Rents &amp; Program Mix</div>
-                        <table class="">
+                        <table class="program-summary">
+                            <colgroup>
+                                <col style="width:15%">
+                                <col style="width:20%">
+                                <col style="width:13%">
+                                <col style="width:10%">
+                                <col style="width:16%">
+                                <col style="width:14%">
+                                <col style="width:12%">
+                            </colgroup>
                             <tr>
-                                <th>Program Summary</th>
+                                <th colspan="2" class="summary-heading">Program Summary</th>
                                 <th>Units</th>
                                 <th>Mix</th>
                                 <th>Avg. Unit Size (SF)</th>
@@ -632,15 +718,17 @@
                                 <th>Avg. $/SF</th>
                             </tr>
                             <tr class="bl">
-                                <td>Lighter Touch – Attainable Luxury</td>
+                                <td class="touch-cell">Lighter Touch</td>
+                                <td class="program-name">Attainable Luxury</td>
                                 <td>240</td>
                                 <td>100.0%</td>
                                 <td>699</td>
                                 <td>$5,730</td>
                                 <td>$8.20</td>
                             </tr>
-                            <tr class="rd">
-                                <td>Heavier Touch – Attainable Luxury</td>
+                            <tr class="rd heavier-start">
+                                <td class="touch-cell heavier-touch" rowspan="3">Heavier Touch</td>
+                                <td class="program-name">Attainable Luxury</td>
                                 <td>440</td>
                                 <td>50.0%</td>
                                 <td>699</td>
@@ -648,7 +736,7 @@
                                 <td>$8.20</td>
                             </tr>
                             <tr class="pu">
-                                <td>Heavier Touch – Standard Luxury</td>
+                                <td class="program-name">Standard Luxury</td>
                                 <td>440</td>
                                 <td>50.0%</td>
                                 <td>828</td>
@@ -656,7 +744,7 @@
                                 <td>$8.18</td>
                             </tr>
                             <tr class="ye">
-                                <td>Heavier Touch – Total / Average</td>
+                                <td class="program-name">Total / Average</td>
                                 <td>880</td>
                                 <td>100.0%</td>
                                 <td>763</td>
@@ -869,11 +957,16 @@
                     <div class="card" style="flex:1">
                         <div class="hd "><em>6</em>Residential Project Economics</div>
                         <table class="eco">
-                            <tr>
+                            <tr class="eco-group">
                                 <th style="background:none"></th>
-                                <th class="h-bl">Lighter Touch<br>Attainable Luxury<br>(240 units)</th>
-                                <th class="h-or">Heavier Touch<br>Attainable Luxury<br>(440 units)</th>
-                                <th class="h-pu">Heavier Touch<br>Standard Luxury<br>(440 units)</th>
+                                <th class="h-bl">Lighter Touch</th>
+                                <th class="heavier-group" colspan="2">Heavier Touch</th>
+                            </tr>
+                            <tr class="eco-subhead">
+                                <th style="background:none"></th>
+                                <th class="h-bl">Attainable Luxury<br>(240 units)</th>
+                                <th class="h-or">Attainable Luxury<br>(440 units)</th>
+                                <th class="h-pu">Standard Luxury<br>(440 units)</th>
                             </tr>
                             <tr>
                                 <td>Units</td>
@@ -954,10 +1047,11 @@
                                 <td>$34,600,000</td>
                             </tr>
                         </table>
+                        <div class="eco-note">Note for project economics</div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="hd "><em>7</em>Key Project Inputs</div>
+                    <div class="hd "><em>7</em>key Project Economic Inputs</div>
                     <table class="">
                         <tr>
                             <th></th>
@@ -1082,6 +1176,9 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="card">
+                    <div class="hd">Appendix</div>
                 </div>
             </div>
         </div>
