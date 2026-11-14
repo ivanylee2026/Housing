@@ -30,7 +30,7 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: #555;
-            font-size: 11px;
+            font-size: 12px;
             line-height: 1.35
         }
 
@@ -78,7 +78,7 @@
 
         .kpis {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(7, 1fr);
             gap: 8px;
             margin-bottom: 5px
         }
@@ -112,7 +112,7 @@
         }
 
         .card {
-            background: var(--card);
+            background: #fff;
             border-radius: 6px;
             padding: 10px
         }
@@ -349,6 +349,79 @@
             padding: 8px
         }
 
+        .renter-profile-card,
+        .amenity-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 0
+        }
+
+        .renter-profile-card .profile-columns,
+        .renter-profile-card .profile-block {
+            min-height: 0
+        }
+
+        .profile-columns {
+            display: grid;
+            flex: 1;
+            min-height: 0;
+            gap: 8px
+        }
+
+        .profile-block {
+            display: flex;
+            flex-direction: column;
+            min-width: 0
+        }
+
+        .profile-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            flex: 1;
+            min-height: 0;
+            gap: 6px
+        }
+
+        .profile-panel {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            padding: 8px;
+            border-radius: 4px;
+            background: #d9eefa;
+            font-size: 11px
+        }
+
+        .profile-panel.purple {
+            background: #eadcf8
+        }
+
+        .profile-panel b {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--navy);
+            font-size: 12px
+        }
+
+        .profile-panel p {
+            margin-top: 4px;
+            font-size: 11px
+        }
+
+        .positioning-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px
+        }
+
+        .positioning-copy img {
+            width: 30px;
+            height: 30px;
+            flex: none;
+            object-fit: contain
+        }
+
         .profile-detail {
             display: flex;
             align-items: flex-start;
@@ -435,6 +508,11 @@
             object-fit: contain
         }
 
+        .am {
+            flex: 1;
+            min-height: 0
+        }
+
         .am .s {
             background: #d9eefa;
             border-radius: 4px;
@@ -469,7 +547,7 @@
                     <div><b>920</b><span>Total Units</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/03_KPI_Program_Mix_Pie_Chart.png" alt="">
-                    <div><b>13.0% / 87.0%</b><span>Low-Rise / <br/>Standard Luxury</span></div>
+                    <div><b>13.0%/87.0%</b><span>Low-Rise / <br/>Standard Luxury</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/04_KPI_Average_Unit_Size_Ruler.png" alt="">
                     <div><b>875 SF</b><span>Avg. Unit Size</span></div>
@@ -478,6 +556,9 @@
                     <div><b>$5,385</b><span>Avg. Asking Rent</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt="">
+                    <div><b>$6.15</b><span>Avg. $/SF</span></div>
+                </div>
+                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt="">
                     <div><b>$6.15</b><span>Avg. $/SF</span></div>
                 </div>
             </div>
@@ -549,49 +630,43 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="card" style="flex:1.45">
-                    <div class="hd "><em>3</em>Positioning &amp; Renter Profile</div>
-                    <div class="row">
-                        <div style="width:100px">
-                            <h3>Typology / Positioning</h3>
-                            <img class="positioning-icon" src="SLAC_Dashboard_Individual_Icons/13_Positioning_Low_Rise_Building.png" alt="">
-                            <div class="sm">Recommend a mixed low-rise and Standard Luxury program emphasizing
-                                seclusion, school-district appeal, green space, and proximity to employment.</div>
-                        </div>
-                        <div style="flex:1">
-                            <h3>Renter Profile</h3>
-                            <div class="row">
-                                <div class="box" style="background:#d9eefa;flex:1;font-size:9.5px"><b class="n"
-                                        style="font-size:12px">Low-Rise</b>
-                                    <p class="profile-detail" style="margin:5px 0"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b class="n">Audience:</b><br>Established Professionals,
-                                        Families, and Empty Nesters &amp; Downsizers</span></p>
-                                    <p class="profile-detail" style="margin:5px 0"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b class="n">Financial Status:</b><br>$250,000–$500,000+</span></p>
-                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b class="n">Motivation:</b><br>Safety, privacy, green space, larger floor plans,
-                                        low-maintenance living</span></p>
+            <div class="row" style="margin-bottom:10px">
+                <div class="card renter-profile-card" style="flex:1;margin:0">
+                    <div class="hd"><em>3</em>Renter Profile</div>
+                    <div class="profile-columns" style="grid-template-columns:1fr">
+                        <div class="profile-block">
+                            <div class="profile-panels">
+                                <div class="profile-panel">
+                                    <b>Low-Rise</b>
+                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b>Audience:</b> Established Professionals, Families, and Empty Nesters &amp; Downsizers</span></p>
+                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b>Financial Status:</b> $250,000–$500,000+</span></p>
+                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b>Motivation:</b> Safety, privacy, green space, larger floor plans, low-maintenance living</span></p>
                                 </div>
-                                <div class="box" style="background:#eadcf8;flex:1;font-size:9.5px"><b class="n"
-                                        style="font-size:12px">Standard Luxury</b>
-                                    <p class="profile-detail" style="margin:5px 0"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b class="n">Audience:</b><br>Young Professionals,
-                                        Established Professionals, and Empty Nesters &amp; Downsizers</span></p>
-                                    <p class="profile-detail" style="margin:5px 0"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b class="n">Financial Status:</b><br>$150,000–$350,000+</span></p>
-                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b class="n">Motivation:</b><br>Proximity to employment, modern amenities,
-                                        convenience, and green space</span></p>
+                                <div class="profile-panel purple">
+                                    <b>Standard Luxury</b>
+                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b>Audience:</b> Young Professionals, Established Professionals, and Empty Nesters &amp; Downsizers</span></p>
+                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b>Financial Status:</b> $150,000–$350,000+</span></p>
+                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b>Motivation:</b> Proximity to employment, modern amenities, convenience, and green space</span></p>
                                 </div>
                             </div>
                         </div>
-                        <div style="width:125px">
+                    </div>
+                </div>
+                <div class="card renter-profile-card" style="flex:1;margin:0">
+                    <div class="hd"><em>4</em>Typology / Positioning &amp; Rationale</div>
+                    <div class="profile-columns" style="grid-template-columns:1fr 1fr">
+                        <div class="profile-block" style="background:#d9eefa;border-radius:6px;padding:10px">
+                            <h3>Typology / Positioning</h3>
+                            <div class="positioning-copy"><img src="SLAC_Dashboard_Individual_Icons/13_Positioning_Low_Rise_Building.png" alt=""><span>Recommend a mixed low-rise and Standard Luxury program emphasizing seclusion, school-district appeal, green space, and proximity to employment.</span></div>
+                        </div>
+                        <div class="profile-block" style="background:#eadcf8;border-radius:6px;padding:10px">
                             <h3>Positioning Rationale</h3>
-                            <img class="positioning-icon" src="SLAC_Dashboard_Individual_Icons/20_Positioning_Rationale_Target.png" alt="">
-                            <div class="sm">The site is positioned to appeal to the Palo Alto employee base seeking
-                                proximity to employment in a quieter, lower-density residential setting. Low-Rise units
-                                emphasize space and privacy, while Standard Luxury units provide a lower monthly entry
-                                point.</div>
+                            <div class="positioning-copy"><img src="SLAC_Dashboard_Individual_Icons/20_Positioning_Rationale_Target.png" alt=""><span>The site is positioned to appeal to the Palo Alto employee base seeking proximity to employment in a quieter, lower-density residential setting. Low-Rise units emphasize space and privacy, while Standard Luxury units provide a lower monthly entry point.</span></div>
                         </div>
                     </div>
                 </div>
-                <div class="card" style="flex:1">
-                    <div class="hd "><em>4</em>Amenities</div>
+                <div class="card amenity-card" style="flex:1;margin:0">
+                    <div class="hd"><em>5</em>Amenities</div>
                     <div class="row am">
                         <div class="s">
                             <h4>Low-Rise</h4>
@@ -614,7 +689,7 @@
             </div>
             <div class="row">
                 <div class="card" style="flex:1">
-                    <div class="hd "><em>5</em>Rents &amp; Program Mix</div>
+                    <div class="hd "><em>6</em>Rents &amp; Program Mix</div>
                     <table class="">
                         <tr>
                             <th>Program</th>
@@ -775,7 +850,7 @@
                 </div>
                 <div style="flex:1.05;display:flex;flex-direction:column;gap:5px">
                     <div class="card">
-                        <div class="hd "><em>6</em>Residential Project Economics</div>
+                        <div class="hd "><em>7</em>Residential Project Economics</div>
                         <table class="eco">
                             <tr>
                                 <th style="background:none"></th>
@@ -864,7 +939,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="hd "><em>7</em>key Project Economic Inputs</div>
+                <div class="hd "><em>8</em>key Project Economic Inputs</div>
                 <table class="">
                     <tr>
                         <th>Product Type</th>

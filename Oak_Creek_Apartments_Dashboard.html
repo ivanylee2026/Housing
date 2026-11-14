@@ -78,7 +78,7 @@
 
         .kpis {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(7, 1fr);
             gap: 8px;
             margin-bottom: 5px
         }
@@ -361,8 +361,8 @@
             border: 1px solid #fff
         }
 
-        .eco .eco-group .heavier-group {
-            border-left: 2px solid #fff
+        .eco .eco-group th:not(:first-child) {
+            border-bottom: 2px solid #111
         }
 
         .eco .eco-subhead th {
@@ -371,13 +371,25 @@
 
         .eco th:first-child,
         .eco td:first-child {
-            border-right: 1px solid #ddd
+            border-right: 2px solid #111
         }
 
-        .eco th:nth-child(3),
-        .eco td:nth-child(3) {
-            border-left: 2px solid #fff
+        .eco th:nth-child(2),
+        .eco td:nth-child(2) {
+            border-right: 2px solid #111
         }
+
+        .eco th:nth-child(4),
+        .eco td:nth-child(4),
+        .eco .eco-group th:last-child {
+            border-right: 2px solid #111
+        }
+
+        .eco .eco-group th:first-child {
+            border-bottom: 1px solid #fff
+        }
+
+
 
         .program-summary {
             table-layout: fixed
@@ -400,8 +412,8 @@
             color: #14213d
         }
 
-        .program-summary .heavier-start td {
-            border-top: 2px solid #fff
+        .program-summary .lighter-touch td {
+            border-bottom: 2px solid #111
         }
 
         .program-summary .summary-heading {
@@ -409,13 +421,29 @@
             border-right: 2px solid #fff
         }
 
-        .eco .eco-subhead th:nth-child(2) {
-            border-left: 2px solid #fff
-        }
-
         .box {
             border-radius: 4px;
             padding: 8px
+        }
+
+        .renter-profile-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 0
+        }
+
+        .renter-profile-panels {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            gap: 6px;
+            min-height: 0
+        }
+
+        .renter-profile-panels .box {
+            flex: 1;
+            min-height: 0;
+            margin-bottom: 0 !important
         }
 
         .profile-detail {
@@ -447,7 +475,10 @@
         }
 
         .hd-icon {
-            margin-right: 4px
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin: 0 auto 4px
         }
 
         .tan {
@@ -531,7 +562,10 @@
                     <div><b>699 / 763 SF</b><span>Avg. Unit Size<br/>(Lighter / Heavier)</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/05_KPI_Average_Rent_Dollar_Coin.png" alt="">
-                    <div><b>$5,730 / $6,250</b><span>Avg. Asking Rent<br/>(Lighter / Heavier)</span></div>
+                    <div><b>$5,730/$6,250</b><span>Avg. Asking Rent<br/>(Lighter / Heavier)</span></div>
+                </div>
+                <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt="">
+                    <div><b>$8.20 / $8.18</b><span>Avg. $/SF<br/>(Lighter / Heavier)</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt="">
                     <div><b>$8.20 / $8.18</b><span>Avg. $/SF<br/>(Lighter / Heavier)</span></div>
@@ -583,7 +617,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="card" style="flex:2.2">
+                    <div class="card" style="flex:2.1">
                         <div class="hd "><em>2</em>Development Scenarios / Typology Overview</div>
                         <div class="row">
                             <div style="flex:1">
@@ -630,10 +664,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card" style="flex:1.3">
-                        <div class="hd "><em>3</em>Positioning &amp; Renter Profile</div>
-                        <div class="row">
-                            <div style="width:90px">
+
+                    <div class="card renter-profile-card" style="flex:.8">
+                        <div class="hd "><em>3</em>Renter Profile</div>
+                        <div class="renter-profile-panels">
+                            <div class="box" style="background:#d9eefa;flex:1;font-size:8.5px;margin-bottom:6px"><b class="n"
+                                    style="font-size:10.5px">Attainable Luxury</b>
+                                <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b class="n">Audience:</b> Early career and young
+                                    professionals, Stanford affiliates, including law and families.</span></p>
+                                <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b class="n">Financial Status:</b> ~$250,000</span></p>
+                                <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b class="n">Motivation:</b> Attainable rent, proximity to Stanford and
+                                    transit access.</span></p>
+                            </div>
+                            <div class="box" style="background:#eadcf8;flex:1;font-size:8.5px"><b class="n"
+                                    style="font-size:10.5px">Standard Luxury</b>
+                                <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b class="n">Audience:</b> Young professionals,
+                                    established
+                                    professionals, downsizers.</span></p>
+                                <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b class="n">Financial Status:</b> $150,000 – $350,000
+                                </span></p>
+                                <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b class="n">Motivation:</b> Proximity to employment, modern amenities,
+                                    convenience, and green space.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="flex:.8">
+                        <div class="hd "><em>4</em>Typology / Positioning & Rationale</div>
+                        <div class="sm">
+                            <div style="width:100%">
                                 <h3 style="font-size:11px">Typology / Positioning</h3>
                                 <img class="positioning-icon" src="SLAC_Dashboard_Individual_Icons/13_Positioning_Low_Rise_Building.png" alt="">
                                 <div class="sm">Recommend two feasible Oak Creek approaches: a lighter-touch
@@ -641,31 +699,9 @@
                                     Attainable
                                     Luxury with Standard Luxury.</div>
                             </div>
-                            <div style="flex:1">
-                                <h3 style="font-size:11px">Renter Profile</h3>
-                                <div class="row" style="gap:5px">
-                                    <div class="box" style="background:#d9eefa;flex:1;font-size:8.5px"><b class="n"
-                                            style="font-size:10.5px">Attainable Luxury</b>
-                                        <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b class="n">Audience:</b> Early career and young
-                                            professionals, Stanford affiliates, including law and families.</span></p>
-                                        <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b class="n">Financial Status:</b> ~$250,000</span></p>
-                                        <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b class="n">Motivation:</b> Attainable rent, proximity to Stanford and
-                                            transit access.</span></p>
-                                    </div>
-                                    <div class="box" style="background:#eadcf8;flex:1;font-size:8.5px"><b class="n"
-                                            style="font-size:10.5px">Standard Luxury</b>
-                                        <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><span><b class="n">Audience:</b> Young professionals,
-                                            established
-                                            professionals, downsizers.</span></p>
-                                        <p class="profile-detail" style="margin:4px 0"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><span><b class="n">Financial Status:</b> $150,000 – $350,000
-                                        </span></p>
-                                        <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><span><b class="n">Motivation:</b> Proximity to employment, modern amenities,
-                                            convenience, and green space.</span></p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <h3 style="margin-top:8px"><img class="hd-icon" src="SLAC_Dashboard_Individual_Icons/20_Positioning_Rationale_Target.png" alt="">Positioning Rationale</h3>
+                        <h3 style="margin-top:8px">Positioning Rationale</h3>
+                        <img class="hd-icon" src="SLAC_Dashboard_Individual_Icons/20_Positioning_Rationale_Target.png" alt="">
                         <ul class="sm">
                             <li>Oak Creek benefits from a prestigious Sand Hill Road address and proximity to Stanford.
                             </li>
@@ -677,7 +713,7 @@
                         </ul>
                     </div>
                     <div class="card" style="flex:.8">
-                        <div class="hd "><em>4</em>Amenities</div>
+                        <div class="hd "><em>5</em>Amenities</div>
                         <div class="am">
                             <div class="s" style="margin-bottom:6px">
                                 <h4>Attainable Luxury</h4>
@@ -698,7 +734,7 @@
                 </div>
                 <div class="row">
                     <div class="card" style="flex:1.25">
-                        <div class="hd "><em>5</em>Rents &amp; Program Mix</div>
+                        <div class="hd "><em>6</em>Rents &amp; Program Mix</div>
                         <table class="program-summary">
                             <colgroup>
                                 <col style="width:15%">
@@ -717,7 +753,7 @@
                                 <th>Asking Rent</th>
                                 <th>Avg. $/SF</th>
                             </tr>
-                            <tr class="bl">
+                            <tr class="bl lighter-touch">
                                 <td class="touch-cell">Lighter Touch</td>
                                 <td class="program-name">Attainable Luxury</td>
                                 <td>240</td>
@@ -726,7 +762,7 @@
                                 <td>$5,730</td>
                                 <td>$8.20</td>
                             </tr>
-                            <tr class="rd heavier-start">
+                            <tr class="rd">
                                 <td class="touch-cell heavier-touch" rowspan="3">Heavier Touch</td>
                                 <td class="program-name">Attainable Luxury</td>
                                 <td>440</td>
@@ -955,7 +991,7 @@
                         </div>
                     </div>
                     <div class="card" style="flex:1">
-                        <div class="hd "><em>6</em>Residential Project Economics</div>
+                        <div class="hd "><em>7</em>Residential Project Economics</div>
                         <table class="eco">
                             <tr class="eco-group">
                                 <th style="background:none"></th>
@@ -1051,7 +1087,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="hd "><em>7</em>key Project Economic Inputs</div>
+                    <div class="hd "><em>8</em>key Project Economic Inputs</div>
                     <table class="">
                         <tr>
                             <th></th>
@@ -1104,7 +1140,7 @@
                     </table>
                 </div>
                 <div class="card">
-                    <div class="hd "><em>8</em><img class="hd-icon" src="SLAC_Dashboard_Individual_Icons/31_Key_Lessons_Lightbulb.png" alt="">Case Study / Lessons Learned</div>
+                    <div class="hd "><em>9</em><img class="hd-icon" src="SLAC_Dashboard_Individual_Icons/31_Key_Lessons_Lightbulb.png" alt="">Case Study / Lessons Learned</div>
                     <div class="row" style="align-items:stretch">
                         <div style="width:230px;text-align:center">
                             <div class="sm nv" style="font-weight:700">Observed Rent Difference for 1965 to 1999 Vintage

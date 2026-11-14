@@ -30,7 +30,7 @@
             background: var(--bg);
             font-family: Arial, Helvetica, sans-serif;
             color: var(--txt);
-            font-size: 11px;
+            font-size: 12px;
             line-height: 1.35
         }
 
@@ -90,7 +90,7 @@
 
         .kpis {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(7, 1fr);
             gap: 8px;
             margin-bottom: 5px
         }
@@ -129,7 +129,7 @@
         }
 
         .card {
-            background: #faf8f4;
+            background: #fff;
             border-radius: 6px;
             padding: 10px;
             margin-bottom: 10px
@@ -345,6 +345,84 @@
             padding: 8px
         }
 
+        .profile-columns {
+            display: grid;
+            gap: 10px;
+            flex: 1
+        }
+
+        .renter-profile-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 0
+        }
+
+        .renter-profile-card .profile-columns,
+        .renter-profile-card .profile-block {
+            min-height: 0
+        }
+
+        .amenity-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 0
+        }
+
+        .profile-block {
+            min-width: 0;
+            display: flex;
+            flex-direction: column
+        }
+
+        .profile-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            flex: 1;
+            min-height: 0
+        }
+
+        .profile-panel {
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            border-radius: 4px;
+            background: var(--blue);
+            font-size: 11px;
+            min-height: 0
+        }
+
+        .profile-panel.purple {
+            background: var(--pur)
+        }
+
+        .profile-panel b {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--navy);
+            font-size: 12px
+        }
+
+        .profile-panel p {
+            margin-top: 4px;
+            font-size: 11px
+        }
+
+        .positioning-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 12px
+        }
+
+        .positioning-copy img {
+            width: 30px;
+            height: 30px;
+            flex: none;
+            object-fit: contain
+        }
+
         .profile-detail {
             display: flex;
             align-items: flex-start;
@@ -380,7 +458,9 @@
         .am {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px
+            gap: 8px;
+            flex: 1;
+            min-height: 0
         }
 
         .am h4 {
@@ -462,7 +542,7 @@
                     <div><b>1,200</b><span>Total Units</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/03_KPI_Program_Mix_Pie_Chart.png" alt="">
-                    <div><b>83.3% / 16.7%</b><span>Standard Luxury / <br/> Ultra-Luxury</span></div>
+                    <div><b>83.3%/16.7%</b><span>Standard Luxury / <br/> Ultra-Luxury</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/04_KPI_Average_Unit_Size_Ruler.png" alt="">
                     <div><b>863 SF</b><span>Avg. Unit Size</span></div>
@@ -471,6 +551,9 @@
                     <div><b>$6,535</b><span>Avg. Asking Rent</span></div>
                 </div>
                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt="">
+                    <div><b>$7.57</b><span>Avg. $/SF</span></div>
+                </div>
+                 <div class="kpi"><img src="SLAC_Dashboard_Individual_Icons/06_KPI_Rent_Per_SF_Bar_Chart.png" alt="">
                     <div><b>$7.57</b><span>Avg. $/SF</span></div>
                 </div>
             </div>
@@ -544,53 +627,46 @@
                 </div>
             </div>
 
-            <!-- 3 & 4 -->
             <div class="row" style="margin-bottom:10px">
-                <div class="card" style="flex:1.45;margin:0">
-                    <div class="hd"><em>3</em>Positioning &amp; Renter Profile</div>
-                    <div class="row">
-                        <div style="width:100px">
-                            <h3>Typology / Positioning</h3>
-                            <div style="font-size:26px;color:var(--gold);text-align:center">🏢</div>
-                            <div style="font-size:10.5px">Recommend a mixed Standard Luxury and Ultra-Luxury program
-                                emphasizing transit orientation, walkability, retail adjacency, and convenience.</div>
-                        </div>
-                        <div style="flex:1">
-                            <h3>Renter Profile</h3>
-                            <div class="row">
-                                <div class="box" style="background:var(--blue);flex:1;font-size:10px"><b
-                                        style="color:var(--navy);font-size:12px">Standard Luxury</b>
-                                    <p class="profile-detail" style="margin:6px 0"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""> Young Professionals, Established Professionals, and Empty
-                                        Nesters &amp; Downsizers</p>
-                                    <p class="profile-detail" style="margin:6px 0"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""> $150,000 – $350,000</p>
-                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""> Employment access, walkability, transit, retail, modern amenities, and
-                                        convenience.</p>
+                <div class="card renter-profile-card" style="flex:1;margin:0">
+                    <div class="hd"><em>3</em>Renter Profile</div>
+                    <div class="profile-columns" style="grid-template-columns: 1fr;">
+                        <div class="profile-block">
+                            <div class="profile-panels">
+                                <div class="profile-panel">
+                                    <b>Standard Luxury</b>
+                                    <div class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/14_Standard_Luxury_Renter_Profile_People.png" alt=""><p>Young Professionals, Established Professionals, and Empty Nesters &amp; Downsizers</p></div>
+                                    <div class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/15_Standard_Luxury_Income_Dollar.png" alt=""><p>$150,000 – $350,000</p></div>
+                                    <div class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/16_Standard_Luxury_Motivation_Target.png" alt=""><p>Employment access, walkability, transit, retail, modern amenities, and convenience.</p></div>
                                 </div>
-                                <div class="box" style="background:var(--pur);flex:1;font-size:10px"><b
-                                        style="color:var(--navy);font-size:12px">Ultra-Luxury</b>
-                                    <p class="profile-detail" style="margin:6px 0"><img src="SLAC_Dashboard_Individual_Icons/17_Ultra_Luxury_Renter_Profile_People.png" alt=""> Established Professionals, Executives, and Affluent Empty
-                                        Nesters &amp; Downsizers</p>
-                                    <p class="profile-detail" style="margin:6px 0"><img src="SLAC_Dashboard_Individual_Icons/18_Ultra_Luxury_Income_Dollar.png" alt=""> $300,000 – $750,000+ and/or substantial net worth</p>
-                                    <p class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/19_Ultra_Luxury_Motivation_Target.png" alt=""> Proximity to retail and neighborhood amenities, larger residences, and
-                                        lock-and-leave convenience.</p>
+                                <div class="profile-panel purple">
+                                    <b>Ultra-Luxury</b>
+                                    <div class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/17_Ultra_Luxury_Renter_Profile_People.png" alt=""><p>Established Professionals, Executives, and Affluent Empty Nesters &amp; Downsizers</p></div>
+                                    <div class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/18_Ultra_Luxury_Income_Dollar.png" alt=""><p>$300,000 – $750,000+ and/or substantial net worth</p></div>
+                                    <div class="profile-detail"><img src="SLAC_Dashboard_Individual_Icons/19_Ultra_Luxury_Motivation_Target.png" alt=""><p>Proximity to retail and neighborhood amenities, larger residences, and lock-and-leave convenience.</p></div>
                                 </div>
                             </div>
-                        </div>
-                        <div style="width:120px">
-                            <h3>Positioning Rationale</h3>
-                            <img class="positioning-icon" src="SLAC_Dashboard_Individual_Icons/20_Positioning_Rationale_Target.png" alt="">
-                            <div style="font-size:10px">Position as a transit-oriented, mixed-use development with
-                                target rents reflecting a 10% transit premium and 5% mixed-use premium, supported by
-                                ground-floor retail and surrounding amenities.</div>
                         </div>
                     </div>
                 </div>
                 <div class="card" style="flex:1;margin:0">
-                    <div class="hd"><em>4</em>Amenities</div>
+                    <div class="hd"><em>4</em>Typology / Positioning &amp; Rationale</div>
+                    <div class="profile-columns" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div class="profile-block" style="background: var(--blue); border-radius: 6px; padding: 10px; min-height: 180px;">
+                            <h3>Typology / Positioning</h3>
+                            <div class="positioning-copy"><img src="SLAC_Dashboard_Individual_Icons/13_Positioning_Low_Rise_Building.png" alt=""><span>Recommend a mixed Standard Luxury and Ultra-Luxury program emphasizing transit orientation, walkability, retail adjacency, and convenience.</span></div>
+                        </div>
+                        <div class="profile-block" style="background: var(--pur); border-radius: 6px; padding: 10px; min-height: 180px;">
+                            <h3>Positioning Rationale</h3>
+                            <div class="positioning-copy"><img src="SLAC_Dashboard_Individual_Icons/20_Positioning_Rationale_Target.png" alt=""><span>Position as a transit-oriented, mixed-use development with target rents reflecting a 10% transit premium and 5% mixed-use premium, supported by ground-floor retail and surrounding amenities.</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card amenity-card" style="flex:1;margin:0">
+                    <div class="hd"><em>5</em>Amenities</div>
                     <div class="am">
                         <div class="s">
                             <h4>Standard Luxury</h4>
-                            <p><i>🏋</i>Market-standard amenity package</p>
                             <p><img src="SLAC_Dashboard_Individual_Icons/33_Amenity_Pool_Swimmer.png" alt="">Resort-style pool and courtyard</p>
                             <p><img src="SLAC_Dashboard_Individual_Icons/21_Standard_Luxury_Fitness_Dumbbell.png" alt="">Expanded fitness studio</p>
                             <p><img src="SLAC_Dashboard_Individual_Icons/34_Amenity_Club_Lounge_Sofa.png" alt="">Club lounge</p>
@@ -601,7 +677,7 @@
                             <p><img src="SLAC_Dashboard_Individual_Icons/35_Amenity_Elevated_Crown.png" alt="">Elevated and differentiated amenities</p>
                             <p><img src="SLAC_Dashboard_Individual_Icons/36_Amenity_Wellness_Lotus.png" alt="">Enhanced wellness and lounge spaces</p>
                             <p><img src="SLAC_Dashboard_Individual_Icons/29_Ultra_Luxury_Secure_Parking_Car.png" alt="">Secure parking</p>
-                            <p><i>🛎</i>Hospitality-oriented resident services</p>
+                            <p><img src="SLAC_Dashboard_Individual_Icons/26_Ultra_Luxury_Concierge_Bell.png" alt="">Hospitality-oriented resident services</p>
                         </div>
                     </div>
                 </div>
@@ -610,7 +686,7 @@
             <!-- 5 & 6 -->
             <div class="row" style="margin-bottom:10px">
                 <div class="card" style="flex:1;margin:0;background:#eaf5fb">
-                    <div class="hd"><em>5</em>Rents &amp; Program Mix</div>
+                    <div class="hd"><em>6</em>Rents &amp; Program Mix</div>
                     <table class="t1">
                         <tr>
                             <th>Unit Type</th>
@@ -771,7 +847,7 @@
                 </div>
                 <div style="flex:1.05;display:flex;flex-direction:column;gap:10px">
                     <div class="card" style="margin:0">
-                        <div class="hd"><em>6</em>Residential Project Economics</div>
+                        <div class="hd"><em>7</em>Residential Project Economics</div>
                         <table class="t3">
                             <tr>
                                 <th></th>
@@ -861,7 +937,7 @@
 
             <!-- 7 -->
             <div class="card">
-                <div class="hd"><em>7</em>key Project Economic Inputs</div>
+                <div class="hd"><em>8</em>key Project Economic Inputs</div>
                 <table class="t4">
                     <tr>
                         <th>Product Type</th>
