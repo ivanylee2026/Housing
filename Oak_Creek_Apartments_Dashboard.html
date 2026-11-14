@@ -361,8 +361,8 @@
             border: 1px solid #fff
         }
 
-        .eco .eco-group .heavier-group {
-            border-left: 2px solid #fff
+        .eco .eco-group th:not(:first-child) {
+            border-bottom: 2px solid #111
         }
 
         .eco .eco-subhead th {
@@ -371,13 +371,25 @@
 
         .eco th:first-child,
         .eco td:first-child {
-            border-right: 1px solid #ddd
+            border-right: 2px solid #111
         }
 
-        .eco th:nth-child(3),
-        .eco td:nth-child(3) {
-            border-left: 2px solid #fff
+        .eco th:nth-child(2),
+        .eco td:nth-child(2) {
+            border-right: 2px solid #111
         }
+
+        .eco th:nth-child(4),
+        .eco td:nth-child(4),
+        .eco .eco-group th:last-child {
+            border-right: 2px solid #111
+        }
+
+        .eco .eco-group th:first-child {
+            border-bottom: 1px solid #fff
+        }
+
+
 
         .program-summary {
             table-layout: fixed
@@ -400,17 +412,13 @@
             color: #14213d
         }
 
-        .program-summary .heavier-start td {
-            border-top: 2px solid #fff
+        .program-summary .lighter-touch td {
+            border-bottom: 2px solid #111
         }
 
         .program-summary .summary-heading {
             background: linear-gradient(to right, #4a5568 0%, #4a5568 calc(42.857% - 1px), #fff calc(42.857% - 1px), #fff calc(42.857% + 1px), #4a5568 calc(42.857% + 1px));
             border-right: 2px solid #fff
-        }
-
-        .eco .eco-subhead th:nth-child(2) {
-            border-left: 2px solid #fff
         }
 
         .box {
@@ -745,7 +753,7 @@
                                 <th>Asking Rent</th>
                                 <th>Avg. $/SF</th>
                             </tr>
-                            <tr class="bl">
+                            <tr class="bl lighter-touch">
                                 <td class="touch-cell">Lighter Touch</td>
                                 <td class="program-name">Attainable Luxury</td>
                                 <td>240</td>
@@ -754,7 +762,7 @@
                                 <td>$5,730</td>
                                 <td>$8.20</td>
                             </tr>
-                            <tr class="rd heavier-start">
+                            <tr class="rd">
                                 <td class="touch-cell heavier-touch" rowspan="3">Heavier Touch</td>
                                 <td class="program-name">Attainable Luxury</td>
                                 <td>440</td>
